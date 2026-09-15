@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'column_widget.dart';
-// import 'row_widget.dart';
+import 'form_widget.dart';
 import 'first_widget.dart';
 
 void main() {
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const FirstWidget(),
+      home: const FormWidget(),
     );
   }
 }
