@@ -69,6 +69,7 @@ class _FormWidgetState extends State<FormWidget> {
                   style: TextStyle(
                     color: Colors.blue,
                     decoration: TextDecoration.underline,
+                    fontFamily: 'Poppins',
                   ),
                 ),
               ),
