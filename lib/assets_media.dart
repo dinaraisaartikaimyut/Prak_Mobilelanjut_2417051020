@@ -10,6 +10,7 @@ class AssetsMediaPage extends StatefulWidget {
 
 class _AssetsMediaPageState extends State<AssetsMediaPage> {
   final AudioPlayer player = AudioPlayer();
+
   bool isPlaying = false;
   int _currentIndex = 0;
 
@@ -38,11 +39,24 @@ class _AssetsMediaPageState extends State<AssetsMediaPage> {
     return Scaffold(
       backgroundColor: const Color(0xFFF8F6FC),
 
+      // =========================
+      // APP BAR
+      // =========================
       appBar: AppBar(
-        title: const Text('Beranda Assets & Media'),
+        title: const Text(
+          'Beranda Assets & Media',
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.w900,
+            fontSize: 22,
+          ),
+        ),
         backgroundColor: const Color(0xFFF8F6FC),
       ),
 
+      // =========================
+      // DRAWER
+      // =========================
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -54,15 +68,25 @@ class _AssetsMediaPageState extends State<AssetsMediaPage> {
               child: Text(
                 'Menu',
                 style: TextStyle(
+                  fontFamily: 'Poppins',
                   color: Colors.white,
                   fontSize: 24,
+                  fontWeight: FontWeight.w900,
                 ),
               ),
             ),
 
             ListTile(
-              leading: const Icon(Icons.video_library),
-              title: const Text('Video'),
+              leading: const Icon(
+                Icons.video_library,
+              ),
+              title: const Text(
+                'Video',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
               onTap: () {
                 Navigator.pop(context);
 
@@ -77,11 +101,17 @@ class _AssetsMediaPageState extends State<AssetsMediaPage> {
         ),
       ),
 
+      // =========================
+      // BODY
+      // =========================
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
+              // =========================
+              // PROFILE CARD
+              // =========================
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
@@ -111,10 +141,11 @@ class _AssetsMediaPageState extends State<AssetsMediaPage> {
 
                     const Text(
                       'Nama Mahasiswa',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Poppins',
                         fontSize: 22,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w900,
                       ),
                     ),
                   ],
@@ -123,6 +154,9 @@ class _AssetsMediaPageState extends State<AssetsMediaPage> {
 
               const SizedBox(height: 20),
 
+              // =========================
+              // AUDIO CARD
+              // =========================
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
@@ -138,7 +172,7 @@ class _AssetsMediaPageState extends State<AssetsMediaPage> {
                       style: TextStyle(
                         fontFamily: 'Poppins',
                         fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w900,
                       ),
                     ),
 
@@ -197,17 +231,35 @@ class _AssetsMediaPageState extends State<AssetsMediaPage> {
         ),
       ),
 
+      // =========================
+      // BOTTOM NAVIGATION
+      // =========================
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
+
+        selectedLabelStyle: const TextStyle(
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w900,
+        ),
+
+        unselectedLabelStyle: const TextStyle(
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w900,
+        ),
+
         onTap: (index) {
           setState(() {
             _currentIndex = index;
           });
 
           if (index == 1) {
-            Navigator.pushNamed(context, '/detail');
+            Navigator.pushNamed(
+              context,
+              '/detail',
+            );
           }
         },
+
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

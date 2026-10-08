@@ -63,12 +63,14 @@ flutter:
     - assets/images/
     - assets/audios/
     - assets/videos/
+    - assets/fonts/
 
   fonts:
     - family: Poppins
       fonts:
         - asset: assets/fonts/poppins-black.ttf
-     
+          
+          
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
